@@ -93,4 +93,4 @@ At this point, you have successfully:
 **Congratulations!** You have successfully completed Lab X.X. You are now ready to move on to the next section.
 
 
-[Next Lab: Lab 2 - Automated Debt Collection](./lab2_debt_ai_agent.md){ .md-button .md-button--primary }
+[Next Lab: Lab 4 - Cross-skill multi-agent orchestration](./lab4_ai_agent_transfer.md){ .md-button .md-button--primary }

@@ -1,6 +1,7 @@
-# Lab Purpose
 
-The purpose of this lab is to build a fake payment service for demo purposes. The outcome of this lab is twofod: 
+# Extra Lab: NovaPay Payment Service
+
+During the Bootcamp, you have used a NovaPay mock-payment service provided by Cisco. As this service is not guaranteed to be maintained beyond the Bootcamp, this lab will allow you to build your own fake payment service for demo purposes. The outcome of this lab is twofod: 
 
 1. A mockpayment frontend web site that mimics a typical payment user interface. The frontend offers a user interface to enter the payment data: amount, card option (visa, master card...) and  card details (name, number, expiration date and cvv). It allows a user to enter the data and click on a pay button to confirm the payment. The web site responds with a confirmation message that the payment has been completed. The user will see the amount payed, the last 4 digits of its credit card and a mock confirmation number.
 
@@ -16,12 +17,12 @@ This lab provides a **step-by-step guide** to replicate and deploy your own vers
 ---
 
 
-# Pre-Requisites
+## Pre-Requisites
 This section outlines the required technologies, platforms, and applications needed to build, deploy, and operate the NovaPay Mock Payment Service.
 
 The implementation of the service relies on a lightweight web-based architecture composed of a hosted frontend, a backend API layer, a persistent session store, and an external Desktop Agent application capable of invoking REST APIs.
 
-## Required components
+### Required components
 The following table summarizes the core components required to implement the NovaPay payment service:
 
 |Service | Component| Role in NovaPay|
@@ -30,7 +31,7 @@ The following table summarizes the core components required to implement the Nov
 |Render|Backend|Cloud hosting for the Node.js/Express API (Session management & processing).|
 |Redis Cloud|Database|Providing a managed Key-Value store for persistent, fast session storage.|
 
-## Required Applications and Accounts
+### Required Applications and Accounts
 
 In order to successfully deploy the NovaPay service, the following applications and user accounts must be available:
 
@@ -54,11 +55,11 @@ In order to successfully deploy the NovaPay service, the following applications 
 
 
 
-#  General overview of the NovaPay payment service. 
+##  General overview of the NovaPay payment service. 
 
 **NovaPay** is a mock payment service designed for developer testing and integration purposes. It provides a simple, secure payment flow where an agent can generate a payment session, share a frontend URL with a customer, and confirm the payment. The service stores session data in Redis and allows polling from a desktop or web application to verify payment completion.
 
-## Architecture Overview
+### Architecture Overview
 
 ```mermaid
 flowchart LR
@@ -78,7 +79,7 @@ flowchart LR
 
 ---
 
-# 📌 Lab Overview
+## Lab Overview 📌 
 
 In this lab you will perform the following tasks:
 
@@ -91,11 +92,10 @@ In this lab you will perform the following tasks:
 
 ---
 
-# 🔹 STEP 1 — Replicate the NovaPay Repository
+## 🔹 STEP 1 — Replicate the NovaPay Repository
 
 You will create your own copy of the NovaPay implementation in your own repository. Currently, all the assets for the service are located in a GitHub hosted repository: [Novapay](https://github.com/cx-partner/NovaPay), owned by Cisco.
 
----
 
 ???+ webex "Import NovaPay GitHub Repository"
 
@@ -126,11 +126,10 @@ You will create your own copy of the NovaPay implementation in your own reposito
 
 ---
 
-# 🔹 STEP 2 — Configure GitHub pages (Frontend Hosting)
+## 🔹 STEP 2 — Configure GitHub pages (Frontend Hosting)
 
 The NovaPay frontend that hosts the user interface is hosted publicly using GitHub Pages.
 
----
 
 ???+ webex "Enable GitHub Pages"
 
@@ -175,7 +174,7 @@ The NovaPay frontend that hosts the user interface is hosted publicly using GitH
 
 --- 
 
-# 🔹 STEP 3 — Deploy Backend API on Render
+## 🔹 STEP 3 — Deploy Backend API on Render
 
 ???+ webex "Create Render Account"
 	
@@ -435,7 +434,7 @@ Your frontend is hosted using GitHub Pages, but it still references the old back
 
 --- 
 
-# ✅ Lab Completion
+## Lab Completion ✅
 
 At this point, you have successfully:
 
@@ -457,7 +456,7 @@ You now have a fully operational NovaPay Mock Payment Service running on the Int
 
 ---
 
-# 🛠️ Troubleshooting Guide
+## Troubleshooting Guide 🛠️
 
 This section describes the most common issues encountered during the deployment and testing of the NovaPay Payment Service, along with recommended solutions.
 
