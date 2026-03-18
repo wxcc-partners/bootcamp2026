@@ -216,33 +216,83 @@ In this first step, you will define the "brain" and personality of your AI Agent
 
 ---
 
-## Lab 2.2 - Feed Alex with the Knowledge Base
+## Lab 2.2 - Feed Alex with a Knowledge Base
 
-!!! download inline end "Knowledge base document"
-    You can download the Knowledge base documentation from [here](./bcamp_files/Webex%20Financial%20Group%20KB.docx).
+RAG (Retrieval-Augmented Generation) ingestion is the process of collecting, structuring, and indexing enterprise data—such as documents, FAQs, or knowledge articles—into a searchable format (typically embeddings in a vector database). This enables AI agents to dynamically retrieve the most relevant information at runtime, grounding their responses in trusted sources and forming the foundation of accurate, up-to-date Knowledge Bases.
 
-To ensure Alex can handle more than just transactional data, you will now provide the agent with a Knowledge Base. This section involves uploading or linking documentation regarding Webex Financial Group’s policies, general banking FAQs, and service descriptions. This allows the agent to answer "General Enquiries" accurately without needing a human specialist for basic informational questions.
+To ensure Alex can handle more than just transactional data, you will now provide the agent with a Knowledge Base. This section involves linking documentation regarding Webex Financial Group’s policies, general banking FAQs, and service descriptions. This allows the agent to answer "General Enquiries" accurately without needing a human specialist for basic informational questions. 
 
+Webex AI Agent supports three types of sources for the Knowledge Base: 
 
+- *Files*: upload PDF, .docx, .doc, .txt, .xlsx, .xls, and .CSV files.
+- *Articles*: editalbe documents in the AI Agent Studio
+- *Websites*: website content using web URLs
 
-???+ webex "Knowledge-Base Configuration"
+We will use the new **Web URL ingestion** mechanism. Website extraction uses automated crawling techniques to browse the internet to find and download the relevant content from web pages and transform it into knowledge that your AI agents can access. Crawling begins with the starting URL that you provide. Based on the depth and the page limits 
+that you specify, the crawler application navigates from the home page, visits the websites, and 
+fetches the required content based on the URL patterns and sub-domain definitions.
+
+???+ webex "Web ingestion for the Knowledge-Base Configuration"
+
+    For the sake of the Bootcamp, we have created a simple content and pushed it to a website that you can access through the   Bootcamp Web Lab documentation at [Webex Bank Knowledge Base](https://cx-partner.github.io/bootcamp2026/bcamp_files/Webex_Financial_Group_KB/) tab. Let's configure the Knowledge Base for Alex. 
+
     1. In your AI agent configuration, click on **[Knowledge]**.
-    2. Click on **"Select a knowledge base"** drop down box 
+    2. Click on *Select a knowledge base* drop down box 
     3. Click on **[+Add new]**
-    4. Enter a name for you KB `Webex Finance QandA`, and enter a description. 
+    4. Enter a name for you KB <copy>`Webex Finance QandA`</copy>, and enter a description. 
     5. Click on **[Create]**
-    6. Drag and drop the Knowledge Base document you downloaded above.
-    7. Click on **[Process Files]**
-    8. The system will take some minutes to process the file. Once completed, you can see your KB file under the **Processed files** section.
+    6. In the next page, click on the right box **[Extract websites]**. (Alternatively, you can click in the upper right bottom **[Add Source]** and select *Websites*)
+    7. In the next page, under **Source details** enter:
+
+        - a **Source name**: <copy> `WebexBank_KB_web`</copy>, and 
+        - a **Description**: <copy> `Web based Knowledge Base for Webex Bank` </copy>
+
+    8. Under **Source configuration**, populate
+
+        - under **Starting URL** the URL <copy>`https://cx-partner.github.io/bootcamp2026/bcamp_files/Webex_Financial_Group_KB`</copy>
+            
+            Note that after entering the URL, the system completes a site verification.
+
+        - leave the rest of parameters to their default values
+
+    9. Click **[Add source]** at the bottom of the window
+
+    Once completed, the system starts building the content. You will see the status as *Syncing* and then *Processing*. It might take some minutes until it becomes *Processed*. When you see this state, your web Knowledge Base is ready. 
 
     ???+ gif "Create Knowledge Base"
          <figure markdown>
-        ![Create AI Agent KowledgeBase](./assets/AI Agent KB.gif)
+        ![Create AI Agent KowledgeBase](./assets/AI Agent Web KB.gif)
         </figure>
     
      To come back to the AI Agent configuration page, click on the **[x]** button at the top-right.
 
-     Click on **[Save changes]** to save the KB in your AI Agent.
+
+
+!!! download inline end "Knowledge base document"
+    You can download the Knowledge base documentation from [here](./bcamp_files/Webex%20Financial%20Group%20KB.docx).
+
+
+
+???+ webex "OPTIONAL!! -- File ingestion for the Knowledge-Base Configuration"
+
+    While web ingestion is ideal for dynamic content, state-of-the-art AI agents often require access to specific, structured data housed in internal documents. In this section, you will explore the file ingestion capability, which allows you to upload PDFs, DocX, or text files directly into the AI Agent’s Knowledge Base. This can be a critical functionality in certain scenarios, as it enables the agent to reference specific policy manuals, updated credit terms, or internal FAQs that are not publicly available on the web. By using this ingestion method, you ensure your agent has a robust, multi-source intelligence layer to handle complex customer inquiries.
+
+    The content uploaded in this section is exactly the same as with the Web Ingestion method, so you can actually skip this step. We keep it here to show how file ingestion is configured in the AI Agent Studio.
+
+    !!! download inline end "Knowledge base document"
+    You can download the Knowledge base file documentation from [here](./bcamp_files/Webex_Financial_Group_KB.docx).
+
+    1. In your AI agent configuration, click on **[Knowledge]**.
+    2. You will now see the `Webex Finance QandA` knowledge base populated in your AI Agent. Click on **[Manage]**.
+    3. Click the upper right bottom **[Add Source]** and select *Files*
+    6. Drag and drop or **[Add]** the `Webex_Financial_Group_KB.docx` you downloaded above.
+    7. Click on **[Process Files]**
+    8. The system will take some minutes to process the file. Once completed, you can see your KB file under the **Processed files** section in the next window. 
+    9. Click **[Close and keep processing]**
+    10. If you have configured your Web based KB, you will now see both sources listed in your AI Agent knowledge base. 
+
+     To come back to the AI Agent configuration page, click on the **[x]** button at the top-right.
+
 
     
 ---

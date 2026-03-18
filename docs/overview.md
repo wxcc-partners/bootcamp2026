@@ -27,11 +27,9 @@ You will work within your own WxCC tenant (Gold Tenant or NFR demo/lab) to deplo
 **Day 1 – Proactive Automation & AI Foundations**
 
 - Lab 1 - *Proactive Outbound Reach*
-
     Configure the Native Campaign Manager to trigger voice calls based on debt maturity dates found in your Airtable database.
 
 - Lab 2 - *Automated Customer Engagement* 
-    
     Build an autonomous AI Agent capable of authenticating customers, retrieving debt balances, offering payment options and generating and delivering payment links via NovaPay integration.
 
 **Day 2: Advanced Orchestration & Human-in-the-Loop AI**
@@ -57,11 +55,9 @@ By participating in this bootcamp, you will::
 To ensure a smooth experience during the bootcamp, the following must be pre-configured in your Gold Tenant before starting Lab 1:
 
 1. Digital Channel for Outbound Notifications
-
     A digital channel must be enabled to allow the AI Agent to send payment links. Recommended: Email channel via Webex Connect
 
 2. Airtable Base (Customer Data Repository)
-
     You must configure an Airtable Base that will act as the Customer Debt Database, including Customers table, Transactions table and Investments table. 
 
     This database will be used by AI Agents for customer authentication, debt retrieval, transaction validation and investment advisory scenarios

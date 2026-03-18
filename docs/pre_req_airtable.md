@@ -33,7 +33,7 @@ Let´s start building your Airtable Base
 
     **You can skip this step if you have already an account**.
 
-    Got to <https://www.airtable.com/> and click on "Sign up for free".
+    Go to <https://www.airtable.com/> and click on "Sign up for free".
 
     ???+ inline end "Create Airtable account"
 
